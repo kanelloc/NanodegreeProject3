@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if success %}
+        <div class="alert alert-success">
+            <strong>Success!</strong>{{success}}
+        </div>
+    {% endif %}
+    <h2>Main page</h2>
+    <a href="/blog" class="btn btn-info" role="button">Go to the blog</a>
+    <hr>
+    <hr>
+    <a href="/blog/newpost" class="btn btn-info" role="button">Add a new blog post</a>
+{% endblock %}
