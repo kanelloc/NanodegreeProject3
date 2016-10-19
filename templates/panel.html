@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Control Panel</h3>
+<hr>
+<div class="container">
+    <h4>Posts Table</h4>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Post id</th>
+                <th>Post subject</th>
+                <th>Created at</th>
+                <th>Updated at</th>
+                <th>Delete</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in posts %}
+                <tr class="success">
+                    <td name><a name="id" href="/blog/{{p.key().id()}}">{{p.key().id()}}</a></td>
+                    <td>{{p.subject}}</td>
+                    <td>{{p.created_at.strftime("%b %d, %Y, %R")}}</td>
+                    <td>{{p.last_modified.strftime("%b %d, %Y, %R")}}</td>
+                    <td class="col-md-1" align="center">
+                        <div class="btn-group" role="group">
+                            <a href="/blog/{{p.key().id()}}/delete">
+                                <button type="button" class="btn btn-danger">Delete</button>
+                            </a>
+                        </div>
+                    </td>
+                    <td class="col-md-1" align="center">
+                        <div class="btn-group" role="group">
+                            <a href="/blog/{{p.key().id()}}/edit">
+                                <button type="button" class="btn btn-primary">Edit</button>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

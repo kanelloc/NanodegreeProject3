@@ -13,7 +13,10 @@ h2 {
     color: red;
 }
 
-
+a{
+    text-decoration: none !important;
+    color: black;
+}
 
 .main-title {
     display: block;
@@ -51,3 +54,14 @@ h2 {
     margin-top: 5px;
 }
 
+
+/*Comments section*/
+.user_name{
+    font-size:14px;
+    font-weight: bold;
+}
+.comments-list .media{
+    border-bottom: 4px dotted #ccc;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}

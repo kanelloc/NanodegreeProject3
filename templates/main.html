@@ -1,14 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% if success %}
+    {% if success or likeMessage %}
         <div class="alert alert-success">
-            <strong>Success!</strong>{{success}}
+            <strong>Success!</strong>{{success}}{{likeMessage}}
+        </div>
+    {% endif %}
+    {% if error %}
+        <div class="alert alert-warning">
+            <strong>{{error}}</strong>
         </div>
     {% endif %}
     <h2>Main page</h2>
-    <a href="/blog" class="btn btn-info" role="button">Go to the blog</a>
-    <hr>
-    <hr>
-    <a href="/blog/newpost" class="btn btn-info" role="button">Add a new blog post</a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <a href="/blog" class="btn btn-info" role="button">Go to the blog</a>
+            </div>
+
+            <div class="col-md-6">
+                <a href="/blog/newpost" class="btn btn-info" role="button">Add a new blog post</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}
