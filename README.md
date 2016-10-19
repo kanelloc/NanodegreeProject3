@@ -1,7 +1,7 @@
 # Multi user blog project
 Multi User Blog Project for Udacity Full Stack Nanodegree
 
-You can find the live version of this project at: http://smoking-rooster.appspot.com/
+You can find the live version of this project at: https://nano-part2.appspot.com/
 
 To run this code, you must first have the [Google App Engine SDK for Python](https://cloud.google.com/appengine/downloads) installed.
 
