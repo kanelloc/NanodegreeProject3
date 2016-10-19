@@ -366,13 +366,15 @@ class CommentEditHandler(Handler):
 class CommentDeleteHandler(Handler):
     def get(self, comment_id):
         if self.user:
+            username = self.user.username
             key = db.Key.from_path('Comment', int(comment_id), parent=None)
             comment = db.get(key)
-            if comment:
+            if comment and comment.user == username:
                 comment.delete()
                 self.redirect('/')
             else:
-                self.write("404")
+                error= "No permission"
+                self.render("/main.html", error=error)
         else:
             self.redirect('/blog/signup')
 
